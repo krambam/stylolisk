@@ -1,0 +1,27 @@
+{
+  "name": "stylolisk",
+  "version": "1.0.0",
+  "description": "CSS framework. Focus on class inheritance and mixins.",
+  "main": "entry.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medialisk/stylolisk.git"
+  },
+  "keywords": [
+    "CSS",
+    "framework",
+    "LESS",
+    "responsive",
+    "mixins",
+    "inheritance"
+  ],
+  "author": "Medialisk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/medialisk/stylolisk/issues"
+  },
+  "homepage": "https://github.com/medialisk/stylolisk"
+}
