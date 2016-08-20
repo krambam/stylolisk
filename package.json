@@ -18,8 +18,8 @@
     "mixins",
     "inheritance"
   ],
-  "author": "Medialisk",
-  "license": "ISC",
+  "author": "Nicolas Wanner",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/medialisk/stylolisk/issues"
   },
