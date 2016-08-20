@@ -1,0 +1,41 @@
+// HELPERS
+// --------------------------------------------------
+.clearfix{
+    &:before{
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.img-responsive{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.indented {
+    margin-left: @default-padding;
+    margin-right: @default-padding;
+}
+
+.padded {
+    padding-left: @default-padding;
+    padding-right: @default-padding;
+}
+
+
+
+// SELF CODE WRITING MIXINS (GLOBAL, NON-TARGETING)
+// ----------------------------------------------------------------------------
+
+// define img-responsive from src selector list
+.defineResponsiveImages(@links; @i) when (@i > 0) {
+    .defineResponsiveImages(@links; (@i - 1));
+    @link: extract(@links, @i);
+    img[src^="@{link}"]{
+        &:extend(.img-responsive);
+    }
+}
