@@ -1,6 +1,6 @@
 {
   "name": "stylolisk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CSS framework. Focusing on class inheritance and mixins with LESS.",
   "scripts": {
     "version": "npm run build && git add -A dist",
