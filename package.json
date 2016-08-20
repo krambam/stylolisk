@@ -3,7 +3,8 @@
   "version": "1.0.1",
   "description": "CSS framework. Focusing on class inheritance and mixins with LESS.",
   "scripts": {
-    "version": "npm run build && git add -A dist",
+    "commit": "git add . -A && git commit -m 'fix' && git push",
+    "version": "git add . -A",
     "postversion": "git push && git push --tags"
   },
   "repository": {
