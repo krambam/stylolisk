@@ -1,6 +1,8 @@
 # generic
 .DS_Store
 
+# NPM logfile
+npm-debug.log
 
 #phpstorm
 /.idea

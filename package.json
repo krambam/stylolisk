@@ -1,10 +1,10 @@
 {
   "name": "stylolisk",
   "version": "1.0.0",
-  "description": "CSS framework. Focus on class inheritance and mixins.",
-  "main": "entry.css",
+  "description": "CSS framework. Focusing on class inheritance and mixins with LESS.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
