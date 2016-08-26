@@ -1,6 +1,6 @@
 {
   "name": "stylolisk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CSS framework. Focusing on class inheritance and mixins with LESS.",
   "scripts": {
     "gitcommit": "git add . -A && git commit -m 'fix' && git push",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/medialisk/stylolisk.git"
+    "url": "git+https://github.com/medialisk/stylolisk.git"
   },
   "keywords": [
     "CSS",
@@ -19,10 +19,18 @@
     "mixins",
     "inheritance"
   ],
-  "author": "Nicolas Wanner",
+  "author": {
+    "name": "Nicolas Wanner"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/medialisk/stylolisk/issues"
   },
-  "homepage": "https://github.com/medialisk/stylolisk"
+  "homepage": "https://github.com/medialisk/stylolisk",
+  "readme": "Stylolisk\r\n=========\r\n\r\nCSS framework. Focusing on class inheritance and mixins with LESS.",
+  "readmeFilename": "README.md",
+  "gitHead": "dc19eac763fb681ddb74252b0e903e90be10e581",
+  "_id": "stylolisk@1.0.4",
+  "_shasum": "a34218a807634c200c979384e8166fea09701951",
+  "_from": "stylolisk@1.0.4"
 }
