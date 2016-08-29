@@ -1,6 +1,6 @@
 {
   "name": "stylolisk",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "CSS framework. Focusing on class inheritance and mixins with LESS.",
   "scripts": {
     "gitcommit": "git add . -A && git commit -m 'fix' && git push",
