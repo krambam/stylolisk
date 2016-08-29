@@ -7,9 +7,6 @@ npm-debug.log
 #phpstorm
 /.idea
 
-#prepros
-prepros.cfg
-
 
 # Cache and TMP ignoring (folder allways delete and .dummy created by pimcore)
 

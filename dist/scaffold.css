@@ -1,3 +1,14 @@
+.container:before,
+.container-fluid:before,
+.row:before {
+  content: " ";
+  display: table;
+}
+.container:after,
+.container-fluid:after,
+.row:after {
+  clear: both;
+}
 img[src^="/website/var/tmp/image-thumbnails/"],
 img[src^="/website/static/img/"],
 img[src^="/static/img/"],
@@ -9,8 +20,6 @@ img[src^="http://placehold.it/"] {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 * {

@@ -10,18 +10,14 @@
 @screen-lg-min:              1200px;
 // Mobile - Desktop Breakpoint
 @screen-desktop-min: @screen-md-min;
-// Mobile - Container goes 100% width
-@container-dissolve-max: (@screen-desktop-min - 1);
 
 
 // img-repsonsive selectors
 @imgSelectors:  "/website/var/tmp/image-thumbnails/",
-"/website/static/img/",
-"/static/img/",
-"http://placehold.it/";
+                "/website/static/img/",
+                "/static/img/",
+                "http://placehold.it/";
 
-// POSSIBILITY TO OVERWRITE VARS
-@import (optional) "../../../css/vars.less";
 
 // BELOW: only processing
 // --------------------------------------------------------------------------------
@@ -101,10 +97,6 @@
     }
     @media (min-width: @screen-lg-min) {
         width: @container-lg;
-    }
-    // can overwrite with width 100% for mobile
-    @media (max-width: @container-dissolve-max){
-        width: 100%;
     }
 }
 
