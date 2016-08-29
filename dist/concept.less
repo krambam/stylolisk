@@ -10,14 +10,18 @@
 @screen-lg-min:              1200px;
 // Mobile - Desktop Breakpoint
 @screen-desktop-min: @screen-md-min;
+// Mobile - Container goes 100% width
+@container-dissolve-max: (@screen-desktop-min - 1);
 
 
 // img-repsonsive selectors
 @imgSelectors:  "/website/var/tmp/image-thumbnails/",
-                "/website/static/img/",
-                "/static/img/",
-                "http://placehold.it/";
+"/website/static/img/",
+"/static/img/",
+"http://placehold.it/";
 
+// POSSIBILITY TO OVERWRITE VARS
+@import (optional) "../../../css/vars.less";
 
 // BELOW: only processing
 // --------------------------------------------------------------------------------
@@ -67,6 +71,20 @@
     padding-right: @default-padding;
 }
 
+
+.flex-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bg-image-full-cover{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 
 // SELF CODE WRITING MIXINS (GLOBAL, NON-TARGETING)
