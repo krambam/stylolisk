@@ -7,7 +7,6 @@ npm-debug.log
 #phpstorm
 /.idea
 
-
 # Cache and TMP ignoring (folder allways delete and .dummy created by pimcore)
 
 # cache
