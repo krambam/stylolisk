@@ -9,6 +9,7 @@ npm-debug.log
 
 # Cache and TMP ignoring (folder allways delete and .dummy created by pimcore)
 
+
 # cache
 /website/var/cache/*
 !/website/var/cache/.dummy
