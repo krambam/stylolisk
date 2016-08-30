@@ -33,6 +33,12 @@ body,
 html {
   word-wrap: break-word;
 }
+div,
+section,
+article,
+nav {
+  position: relative;
+}
 h1,
 h2,
 h3,
