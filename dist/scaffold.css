@@ -34,9 +34,11 @@ html {
   word-wrap: break-word;
 }
 div,
+header,
+nav,
 section,
 article,
-nav {
+footer {
   position: relative;
 }
 h1,
