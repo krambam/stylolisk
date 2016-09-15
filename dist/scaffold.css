@@ -1,12 +1,8 @@
-.container:before,
-.container-fluid:before,
-.row:before {
-  content: " ";
-  display: table;
-}
 .container:after,
 .container-fluid:after,
 .row:after {
+  content: " ";
+  display: table;
   clear: both;
 }
 img[src^="/website/var/tmp/image-thumbnails/"],
