@@ -22,13 +22,6 @@ img[src^="http://placehold.it/"] {
 *:after {
   box-sizing: border-box;
 }
-* {
-  overflow: hidden;
-}
-body,
-html {
-  overflow: auto;
-}
 body,
 html {
   word-wrap: break-word;
