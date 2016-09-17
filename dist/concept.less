@@ -48,12 +48,14 @@
 // --------------------------------------------------
 .clearfix{
     &:after {
-        content: " ";
-        display: table;
-        clear: both;
+        &:extend(.clearfix-after all);
     }
 }
-
+.clearfix-after{
+    content: " ";
+    display: table;
+    clear: both;
+}
 .img-responsive{
     max-width: 100%;
     height: auto;
@@ -101,9 +103,11 @@
 .container,
 .container-fluid,
 .row{
-    &:extend(.clearfix all);
     margin-right: auto;
     margin-left: auto;
+    &:after{
+        .clearfix-after();
+    }
 }
 
 .container{

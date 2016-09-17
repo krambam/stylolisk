@@ -1,6 +1,4 @@
-.container:after,
-.container-fluid:after,
-.row:after {
+.clearfix:after {
   content: " ";
   display: table;
   clear: both;

@@ -1,9 +1,11 @@
 .container,
 .container-fluid,
 .row{
-    &:extend(.clearfix all);
     margin-right: auto;
     margin-left: auto;
+    &:after{
+        .clearfix-after();
+    }
 }
 
 .container{

@@ -2,12 +2,14 @@
 // --------------------------------------------------
 .clearfix{
     &:after {
-        content: " ";
-        display: table;
-        clear: both;
+        &:extend(.clearfix-after all);
     }
 }
-
+.clearfix-after{
+    content: " ";
+    display: table;
+    clear: both;
+}
 .img-responsive{
     max-width: 100%;
     height: auto;
