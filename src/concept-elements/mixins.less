@@ -41,16 +41,3 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-
-
-// SELF CODE WRITING MIXINS (GLOBAL, NON-TARGETING)
-// ----------------------------------------------------------------------------
-
-// define img-responsive from src selector list
-.defineResponsiveImages(@links; @i) when (@i > 0) {
-    .defineResponsiveImages(@links; (@i - 1));
-    @link: extract(@links, @i);
-    img[src^="@{link}"]{
-        &:extend(.img-responsive);
-    }
-}
