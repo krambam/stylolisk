@@ -15,7 +15,7 @@
 
 
 // container-width compared to screen-width:
-@container-to-screen-factor: 0.098;
+@container-reduction-value: 0px;
 
 // POSSIBILITY TO OVERWRITE VARS
 @import (optional) "../../../css/vars.less";
@@ -33,9 +33,9 @@
 
 //== Container sizes
 @factor: 0.098;
-@container-sm: floor(@screen-sm-min * @factor) * 10;
-@container-md: floor(@screen-md-min * @factor) * 10;
-@container-lg: floor(@screen-lg-min * @factor) * 10;
+@container-sm: ((floor(@screen-sm-min * @factor) * 10) -@container-reduction-value);
+@container-md: ((floor(@screen-md-min * @factor) * 10) -@container-reduction-value);
+@container-lg: ((floor(@screen-lg-min * @factor) * 10) -@container-reduction-value);
 
 // declare / overwrite this var for bootstrap components
 @grid-gutter-width: @default-padding * 2;

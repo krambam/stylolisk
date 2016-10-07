@@ -1,43 +1,51 @@
 // HELPERS
 // --------------------------------------------------
-.clearfix{
+.clearfix {
     &:after {
         &:extend(.clearfix-after all);
     }
 }
-.clearfix-after{
+.clearfix-after {
     content: " ";
     display: table;
     clear: both;
 }
-.img-responsive{
+.img-responsive {
     max-width: 100%;
     height: auto;
     display: block;
     vertical-align: middle;
 }
-
 .indented {
     margin-left: @default-padding;
     margin-right: @default-padding;
 }
-
 .padded {
     padding-left: @default-padding;
     padding-right: @default-padding;
 }
-
-
-.flex-center{
+.flex-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
-.bg-image-full-cover{
+.bg-image-full-cover {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.list-unstyled {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.bg-color-overflow{
+    .responsive-desktop({
+        margin-left: -4000px;
+        margin-right: -4000px;
+        padding-left: 4000px;
+        padding-right: 4000px;
+    });
 }

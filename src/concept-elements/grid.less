@@ -1,8 +1,18 @@
-.container,
-.container-fluid,
-.row{
+.container{
     margin-right: auto;
     margin-left: auto;
+    &:after{
+        .clearfix-after();
+    }
+}
+.container-fluid{
+    &:after{
+        .clearfix-after();
+    }
+}
+.row{
+    margin-left: -@default-padding;
+    margin-right: -@default-padding;
     &:after{
         .clearfix-after();
     }
