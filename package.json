@@ -1,6 +1,6 @@
 {
   "name": "stylolisk",
-  "version": "2.0.9",
+  "version": "3.0.0",
   "description": "CSS framework. Focusing on class inheritance and mixins with LESS.",
   "repository": {
     "type": "git",
