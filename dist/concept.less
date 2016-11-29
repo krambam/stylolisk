@@ -1,3 +1,4 @@
+/** MEDIALISK STYLOLISK */
 // VARIABLES
 // --------------------------------------------------------------------------------
 
@@ -40,18 +41,20 @@
 // declare / overwrite this var for bootstrap components
 @grid-gutter-width: @default-padding * 2;
 
+
+
+// ------------------------------------------------------------------------------
+// CLASSES
 // -------------------------------------------------------------
-// HELPERS
-// --------------------------------------------------
-.clearfix {
-    &:after {
-        &:extend(.clearfix-after all);
-    }
-}
 .clearfix-after {
     content: " ";
     display: table;
     clear: both;
+}
+.clearfix {
+    &:after {
+        &:extend(.clearfix-after all);
+    }
 }
 .img-responsive {
     max-width: 100%;
@@ -66,6 +69,10 @@
 .padded {
     padding-left: @default-padding;
     padding-right: @default-padding;
+}
+.unpadded{
+    padding-left: 0;
+    padding-right: 0;
 }
 .flex-center {
     display: flex;
@@ -84,165 +91,101 @@
     margin: 0;
     padding: 0;
 }
-.bg-color-overflow{
-    .responsive-desktop({
-        margin-left: -4000px;
-        margin-right: -4000px;
-        padding-left: 4000px;
-        padding-right: 4000px;
-    });
-}
 .center-block{
     margin-left: auto;
     margin-right: auto;
 }
+
+.container-fluid{
+    &:after{ .clearfix-after(); }
+}
 .container{
     margin-right: auto;
     margin-left: auto;
-    &:after{
-        .clearfix-after();
-    }
-}
-.container-fluid{
-    &:after{
-        .clearfix-after();
-    }
+    @media  (min-width: @screen-sm-min)    { width: @container-sm; }
+    @media  (min-width: @screen-md-min)    { width: @container-md; }
+    @media  (min-width: @screen-lg-min)    { width: @container-lg; }
+    &:after{ .clearfix-after(); }
 }
 .row{
     margin-left: -@default-padding;
     margin-right: -@default-padding;
-    &:after{
-        .clearfix-after();
-    }
+    &:after{ .clearfix-after(); }
 }
 
-.container{
-    @media (min-width: @screen-sm-min) {
-        width: @container-sm;
-    }
-    @media (min-width: @screen-md-min) {
-        width: @container-md;
-    }
-    @media (min-width: @screen-lg-min) {
-        width: @container-lg;
-    }
-    @media (max-width: @screen-mobile-max){
-        width: 100%;
-    }
+
+
+// RESPONSIVE
+// ------------------------------------------------------------------------------
+
+// MEDIA QUERIES
+@responsive-desktop:    ~"screen and (min-width: " @screen-desktop-min  ~")";
+@responsive-mobile:     ~"screen and (max-width: " @screen-mobile-max   ~")";
+
+@responsive-lg:         ~"screen and (min-width: " @screen-lg-min       ~")";
+@responsive-md:         ~"screen and (min-width: " @screen-md-min       ~") and (max-width: " @screen-md-max ~")";
+@responsive-sm:         ~"screen and (min-width: " @screen-sm-min       ~") and (max-width: " @screen-sm-max ~")";
+@responsive-xs:         ~"screen and (min-width: " @screen-xs-min       ~") and (max-width: " @screen-xs-max ~")";
+@responsive-xxs:        ~"screen and (max-width: " @screen-xxs-max      ~")";
+
+
+// GRID COL SYSTEM ABSTRACT
+.col-abstract{
+    position: relative;
+    min-height: 1px;
 }
 
-.col(@width) {
-    display: block;
-    width: 100%;
+// INIT FLOAT
+.colSetWidthAndFloat(@width){
+    width: @width * 100%;
     float: left;
-    // padding-left: ceil(@grid-gutter-width / 2);
-    // padding-right: ceil(@grid-gutter-width / 2);
-    @media(min-width: @screen-desktop-min){
-        width: @width * 100%;
-    }
+}
+
+// SIMPLE "COL"
+.col     (@width)  { &:extend(.col-abstract);   @media @responsive-desktop { .colSetWidthAndFloat(@width) }}
+.col-lg  (@width)  { &:extend(.col-abstract);   @media @responsive-lg      { .colSetWidthAndFloat(@width) }}
+.col-md  (@width)  { &:extend(.col-abstract);   @media @responsive-md      { .colSetWidthAndFloat(@width) }}
+.col-sm  (@width)  { &:extend(.col-abstract);   @media @responsive-sm      { .colSetWidthAndFloat(@width) }}
+.col-xs  (@width)  { &:extend(.col-abstract);   @media @responsive-xs      { .colSetWidthAndFloat(@width) }}
+.col-xxs (@width)  { &:extend(.col-abstract);   @media @responsive-xxs     { .colSetWidthAndFloat(@width) }}
+
+// GRID HIDERS
+.hidden-desktop () { @media @responsive-desktop   { display: none; }}
+.hidden-mobile  () { @media @responsive-mobile    { display: none; }}
+.hidden-lg      () { @media @responsive-lg        { display: none; }}
+.hidden-md      () { @media @responsive-md        { display: none; }}
+.hidden-sm      () { @media @responsive-sm        { display: none; }}
+.hidden-xs      () { @media @responsive-xs        { display: none; }}
+.hidden-xxs     () { @media @responsive-xxs       { display: none; }}
+
+
+// GRID VISIBLERS
+.visible-desktop () { display: none; @media @responsive-desktop   { display: block; }}
+.visible-mobile  () { display: none; @media @responsive-mobile    { display: block; }}
+.visible-lg      () { display: none; @media @responsive-lg        { display: block; }}
+.visible-md      () { display: none; @media @responsive-md        { display: block; }}
+.visible-sm      () { display: none; @media @responsive-sm        { display: block; }}
+.visible-xs      () { display: none; @media @responsive-xs        { display: block; }}
+.visible-xxs     () { display: none; @media @responsive-xxs       { display: block; }}
+
+
+// PRINT MEDIA QUERIES
+.visible-print      { display: none  !important; }
+@media print {
+    .visible-print  { display: block !important; }
+    .hidden-print   { display: none  !important; }
 }
 
 
+// DEPRECATED: Media Queries as mixins
+// -------------------------------------------------
 
-// ALL MEDIA QUERIES
-// ----------------------------------------------------------------
+.responsive-desktop (@rules) { @media @responsive-desktop   { @rules(); }}
+.responsive-mobile  (@rules) { @media @responsive-mobile    { @rules(); }}
 
-.col-lg(@width) {
-    @media (min-width: @screen-lg-min) {
-        width: @width * 100%;
-    }
-}
-.col-md(@width) {
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-        width: @width * 100%;
-    }
-}
-.col-sm(@width) {
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-        width: @width * 100%;
-    }
-}
-.col-xs(@width) {
-    @media (min-width: @screen-xs-min) and (max-width: @screen-xs-max)  {
-        width: @width * 100%;
-    }
-}
-.col-xxs(@width) {
-    @media (max-width: @screen-xxs-max)  {
-        width: @width * 100%;
-    }
-}
+.responsive-lg      (@rules) { @media @responsive-lg        { @rules(); }}
+.responsive-md      (@rules) { @media @responsive-md        { @rules(); }}
+.responsive-sm      (@rules) { @media @responsive-sm        { @rules(); }}
+.responsive-xs      (@rules) { @media @responsive-xs        { @rules(); }}
+.responsive-xxs     (@rules) { @media @responsive-xxs       { @rules(); }}
 
-// hider helpers
-.hidden-desktop(){
-    @media (min-width: @screen-desktop-min) {
-        display: none;
-    }
-}
-.hidden-mobile(){
-    @media (max-width: @screen-mobile-max) {
-        display: none;
-    }
-}
-.hidden-lg() {
-    @media (min-width: @screen-lg-min) {
-        display: none;
-    }
-}
-.hidden-md() {
-    @media (min-width: @screen-md-min) {
-        display: none;
-    }
-}
-.hidden-sm(){
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-        display: none;
-    }
-}
-.hidden-xs() {
-    @media (min-width: @screen-xs-min) and (max-width: @screen-xs-max)  {
-        display: none;
-    }
-}
-.hidden-xxs() {
-    @media (max-width: @screen-xxs-max)  {
-        display: none;
-    }
-}
-
-// repsponsive inline helper
-.responsive-desktop(@rules) {
-    @media (min-width: @screen-desktop-min) {
-        @rules();
-    }
-}
-.responsive-mobile(@rules) {
-    @media (max-width: @screen-mobile-max) {
-        @rules();
-    }
-}
-.responsive-lg(@rules) {
-    @media (min-width: @screen-lg-min) {
-        @rules();
-    }
-}
-.responsive-md(@rules) {
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-        @rules();
-    }
-}
-.responsive-sm(@rules){
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-        @rules();
-    }
-}
-.responsive-xs(@rules) {
-    @media (min-width: @screen-xs-min) and (max-width: @screen-xs-max)  {
-        @rules();
-    }
-}
-.responsive-xxs(@rules) {
-    @media (max-width: @screen-xxs-max)  {
-        @rules();
-    }
-}
